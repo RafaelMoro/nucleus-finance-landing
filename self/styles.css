@@ -1,0 +1,330 @@
+:root {
+    --primario: #6834a6;
+    --blanco: #FFF;
+    --negro: #000000;
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+h1, h2, h3 {
+    font-weight: 900;
+    margin: 2rem 0;
+}
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 4.6rem;
+}
+h3 {
+    font-size: 3rem;
+}
+a {
+    text-decoration: none;
+    color: var(--primario);
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+button:hover {
+    cursor: pointer;
+}
+.content-wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+.bg-white {
+    background-color: var(--blanco);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 3rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0;
+    }
+}
+
+.header img {
+    width: 15rem;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+}
+@media (min-width: 768px) {
+    .header__nav a {
+        color: var(--blanco);
+    }
+}
+
+
+.bg-image {
+    background-image: url('./assets/header_bg.svg');
+    background-repeat: no-repeat;
+    background-position: right top; /* Definir donde posicionar la imagen.*/
+    background-size: 10rem; /* Definir tamaño de la imagen*/
+    width: 100%;
+
+    @media (min-width: 768px) {
+        background-size: 50rem;
+    }
+    @media (min-width: 992px) {
+        background-size: 60rem;
+    }
+    @media (min-width: 1280px) {
+        background-size: 110rem;
+    }
+}
+
+/** Hero */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        place-content: center;
+        gap: 0;
+    }
+}
+.hero__image {
+    width: 50rem;
+    @media (min-width: 768px) {
+        width: 30rem;
+        justify-self: center;
+    }
+}
+.hero__box-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    @media (min-width: 768px) {
+        align-items: flex-start;
+    }
+}
+.hero__title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+        margin: 0;
+        line-height: 1.2;
+        text-align: left;
+        font-size: 5rem;
+    }
+}
+.hero__button {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1.5rem 2rem;
+    border: none;
+    width: 100%;
+    
+    @media (min-width: 768px) {
+        max-width: 20rem;
+    }
+}
+
+/** Description */
+.description {
+    margin-top: 7rem;
+}
+.description__title {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    @media (min-width: 768px) {
+        margin: 0;
+    }
+}
+.description__box {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5rem;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 0;
+        row-gap: 3rem;
+    }
+}
+.description__image {
+    width: 50rem;
+
+    @media (min-width: 768px) {
+        width: 35rem;
+        grid-row: 1 / 4;
+    }
+}
+.feature {
+    padding: 0 2rem;
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+.feature:hover {
+    transform: scale(1.1);
+}
+
+.feature h4 {
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    color: var(--primario);
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.feature p{
+    font-size: 2rem;
+}
+
+.app-details {
+    background-color: var(--primario);
+    position: relative;
+    margin: 10rem 0;
+    padding: 10rem 0;
+    overflow: hidden;
+}
+.app-details::before,
+.app-details::after {
+    content: '';
+    height: 20rem;
+    width: 120%;
+    background-color: var(--blanco);
+    position: absolute;
+}
+.app-details::before {
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+.app-details::after {
+    bottom: -10rem;
+    left: 0;
+    background-color: var(--blanco);
+    transform: rotate(-3deg);
+}
+
+.app-details__box {
+    margin: 10rem auto 10rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.app-details__feature {
+    @media (min-width: 768px) {
+        grid-column: 1 / 2;
+    }
+}
+.app-details__box h3 {
+    font-size: 5rem;
+    text-align: center;
+    color: var(--blanco);
+
+    @media (min-width: 768px) {
+        grid-column: 1 / 3;
+    }
+}
+.app-details img {
+    @media (min-width: 768px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 5;
+    }
+}
+
+.comisions {
+    display: flex;
+    flex-direction: column;
+}
+.comisions h4 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 5rem;
+}
+.comisions__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.comisions__title-features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.comisions__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.feature--comisions {
+    padding-top: 1rem;
+
+    @media (min-width: 768px) {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.feature .feature__porcent {
+    font-weight: 900;
+    color: var(--primario);
+    font-size: 6rem;
+    text-align: center;
+    margin: 0;
+
+    @media (min-width: 768px) {
+        font-size: 4rem;
+    }
+}
